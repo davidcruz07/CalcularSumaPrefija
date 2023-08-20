@@ -10,12 +10,12 @@ public class Main {
     meter lista
     cambiar a entero
     meter a un array
-    hacer la suma prefija (como ya lo habias hecho en el codigo pasado)
+    hacer la suma prefija
     Filewriter
      */
     public static void main(String[] args) {
-            String ruta = "src/car_sales.csv"; // Reemplaza con el nombre de tu archivo
-            String rutaSalida = "src/suma_prefija.csv"; // Reemplaza con la ruta del archivo de salida
+            String ruta = "src/car_sales.csv"; 
+            String rutaSalida = "src/suma_prefija.csv";
 
         List<String> contentList = new ArrayList<>();
 
@@ -30,13 +30,13 @@ public class Main {
                         contentList.add(despSigno);
                     }
                 }
-                // Convertir la lista de strings a un arreglo de doubles
+                //convertir la lista de strings a un arreglo de doubles
                 double[] doubleArray = new double[contentList.size()];
                 for (int i = 0; i < contentList.size(); i++) {
                     doubleArray[i] = Double.parseDouble(contentList.get(i));
                 }
 
-                // Calcular la suma prefija
+                //calcular la suma prefija
                 double[] sumaPrefija = new double[doubleArray.length];
                 double sumaAcumulada = 0.0;
                 for (int i = 0; i < doubleArray.length; i++) {
@@ -45,7 +45,7 @@ public class Main {
                 }
 
 
-                // Formatear y guardar la suma prefija en un archivo CSV
+                //formatear y guardar la suma prefija en el archivo CSV
                 try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaSalida))) {
                     DecimalFormat df = new DecimalFormat("#.##");
                     for (double valor : sumaPrefija) {
@@ -59,6 +59,6 @@ public class Main {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-    }
-}
+    }//endmain
+}//enclass
 
